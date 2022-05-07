@@ -4,6 +4,8 @@ A utility for dealing with PlainData files.
 
 PlainData is a format focused on a plaintext description and a list of data sections each containing either more plaintext or some set of data (often in csv or similar).
 
+See [plaindata.md](./plaindata.md) for more details on the format.
+
 ## Installation
 
 1. `$ shards build`
@@ -12,19 +14,17 @@ PlainData is a format focused on a plaintext description and a list of data sect
 ## Usage
 
 ```
-usage: pdq SUBCOMMAND [AGRS] FILE
+usage: pdq SUBCOMMAND [ARGS] FILE
 
-subcommands:
-  version         prints the pdq version
-  list            lists the sections available for querying in FILE
-  read NAME       prints the contents of the section NAME in FILE
-  append NAME     appends STDIN to the section NAME of the FILE
+    subcommands:
+      version             prints pdq's version
+      help                prints this help
+      description NAME    prints the description section in FILE
+      list                lists the sections available for querying in FILE
+      read NAME           prints the contents of the section NAME in FILE
+      append NAME         appends STDIN to the section NAME of the FILE
 
 ```
-
-## Development
-
-TODO: Write development instructions here
 
 ## Contributing
 

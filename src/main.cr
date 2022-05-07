@@ -4,21 +4,25 @@ class CLI
     usage: pdq SUBCOMMAND [ARGS] FILE
 
     subcommands:
-      list            lists the sections available for querying in FILE
-      read NAME       prints the contents of the section NAME in FILE
-      append NAME     appends STDIN to the section NAME of the FILE
+      version             prints pdq's version
+      help                prints this help
+      description NAME    prints the description section in FILE
+      list                lists the sections available for querying in FILE
+      read NAME           prints the contents of the section NAME in FILE
+      append NAME         appends STDIN to the section NAME of the FILE
 
     USAGE
   end
 
   def main
     case ARGV.shift?
-    when "version" then version()
-    when "help"    then help()
-    when "list"    then list()
-    when "read"    then read()
-    when "append"  then append()
-    else                nothing()
+    when "version"     then version()
+    when "help"        then help()
+    when "description" then description()
+    when "list"        then list()
+    when "read"        then read()
+    when "append"      then append()
+    else                    nothing()
     end
   end
 
@@ -46,6 +50,23 @@ class CLI
       while line = file.gets
         if name = line.match(/\[\[(.+)\]\]/).try &.[1]?.try &.strip
           puts name
+        end
+      end
+    end
+  end
+
+  def description
+    unless filename = ARGV.shift?
+      STDERR.puts "usage: description FILENAME"
+      exit 1
+    end
+
+    File.open(filename) do |file|
+      while line = file.gets
+        if name = line.match(/\[\[(.+)\]\]/).try &.[1]?.try &.strip
+          break
+        else
+          puts line
         end
       end
     end
