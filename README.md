@@ -28,7 +28,7 @@ usage: pdq SUBCOMMAND [ARGS] FILE
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/pdq/fork>)
+1. Fork it (<https://github.com/Willamin/pdq/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -36,4 +36,4 @@ usage: pdq SUBCOMMAND [ARGS] FILE
 
 ## Contributors
 
-- [Will Lewis](https://github.com/your-github-user) - creator and maintainer
+- [Will Lewis](https://github.com/Willamin) - creator and maintainer
