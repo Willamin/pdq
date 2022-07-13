@@ -24,6 +24,10 @@ The first section is special. It does not have a name, nor does it begin with th
 
 The format contained in each section is free for the author to choose, though text-based formats and formats that are parsable with widely available command-line tools are strongly encouraged. 
 
+## Scripts
+
+As a PD formatted file can contain any plaintext content in its sections, it's entirely reasonable to contain scripts – often that act on the file itself. For convenience, the `pdq` program has a subcommand to execute a section as a script. This subcommand will default to a section named `Script` if the user doesn't invoke the execute subcommand with a section name. Given this, it often makes the most sense to use a section named `Script` for a single script.
+
 ## Sample
 
 ```
